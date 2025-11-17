@@ -1,4 +1,4 @@
-package com.miguel.todo.todo.model;
+package com.miguel.todo.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

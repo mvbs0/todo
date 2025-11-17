@@ -1,4 +1,4 @@
-package com.miguel.todo.todo;
+package com.miguel.todo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
