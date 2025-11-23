@@ -15,6 +15,4 @@ public class TaskDto {
 
     private String title;
 
-    public void setDescription() {
-    }
 }

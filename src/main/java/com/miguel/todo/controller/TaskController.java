@@ -16,10 +16,15 @@ public class TaskController {
     private CreateTaskUseCase createTaskUseCase;
 
     @PostMapping
-    public ResponseEntity<TaskDto> create(@RequestBody TaskDto dto){
-        TaskDto response = createTaskUseCase.execute(dto);
-
+    public ResponseEntity<Object> create(@RequestBody TaskDto dto){
+        try {
+        TaskDto response = createTaskUseCase.create(dto);
         return ResponseEntity.ok(response);
+
+        } catch (Exception erro){
+            return ResponseEntity.badRequest().body(erro.getMessage());
+        }
+
     };
 
 }
