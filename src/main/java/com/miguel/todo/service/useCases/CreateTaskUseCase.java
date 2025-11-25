@@ -1,6 +1,8 @@
-package com.miguel.todo.controller.useCases;
+package com.miguel.todo.service.useCases;
 
 import com.miguel.todo.dto.TaskDto;
+import com.miguel.todo.errors.TitleNotFoundException;
+import com.miguel.todo.mapper.TaskMapper;
 import com.miguel.todo.model.TaskEntity;
 import com.miguel.todo.repository.TaskRepository;
 import lombok.SneakyThrows;
@@ -17,7 +19,7 @@ public class CreateTaskUseCase {
     public TaskDto create(TaskDto dto) {
 
         if(dto.getTitle() == null || dto.getTitle().isBlank()) {
-            throw new IllegalAccessException("Title is required");
+            throw new TitleNotFoundException("Title is required");
         }
 
         TaskEntity task = TaskMapper.toEntity(dto);

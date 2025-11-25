@@ -1,4 +1,4 @@
-package com.miguel.todo.controller.useCases;
+package com.miguel.todo.mapper;
 
 import com.miguel.todo.dto.TaskDto;
 import com.miguel.todo.model.TaskEntity;

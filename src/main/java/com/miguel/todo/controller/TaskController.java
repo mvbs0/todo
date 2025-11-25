@@ -1,6 +1,6 @@
 package com.miguel.todo.controller;
 
-import com.miguel.todo.controller.useCases.CreateTaskUseCase;
+import com.miguel.todo.service.useCases.CreateTaskUseCase;
 import com.miguel.todo.dto.TaskDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +17,7 @@ public class TaskController {
 
     @PostMapping
     public ResponseEntity<Object> create(@RequestBody TaskDto dto){
+        //como fazer tratativas de erro no Springboot sem utilizar o try catch
         try {
         TaskDto response = createTaskUseCase.create(dto);
         return ResponseEntity.ok(response);
